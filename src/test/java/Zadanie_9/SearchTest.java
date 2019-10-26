@@ -1,10 +1,12 @@
-package przyklad1;
+package Zadanie_9;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.By;
-import org.junit.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SearchTest {
 
@@ -21,7 +23,7 @@ public class SearchTest {
                                                                         // Zmaksymalizuj okno przeglądarki
         driver.manage().window().maximize();
                                                                         // Przejdź do Google
-        driver.get("http://www.google.com");
+        driver.get("http://www.bing.com");
     }
     @Test
     public void testGoogleSearch() {
@@ -31,7 +33,7 @@ public class SearchTest {
         element.clear();
 
                                                                         // Wpisz informacje do wyszukania
-        element.sendKeys("Testowanie Selenium WebDriver");
+        element.sendKeys("Mistrzostwa Świata w piłce noż");
                                                                         //        Można także symulować naciskanie klawiszy, które nie reprezentują tekstu. W tym celu do metody
                                                                         //        sendKeys() przekazujemy dodatkowo wartości typu Keys .
                                                                         //                np. element.sendKeys ("Karol" + Keys.TAB);
