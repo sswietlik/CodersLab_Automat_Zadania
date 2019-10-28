@@ -1,11 +1,14 @@
 package Zadanie_10;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.logging.profiler.ProfilerLogEntry;
+import org.openqa.selenium.support.ui.Select;
 
 public class Zadanie_10 {
 
@@ -31,7 +34,7 @@ public class Zadanie_10 {
                 WebElement lastName = driver.findElement(By.id("last-name"));
                 lastName.clear();
                 lastName.sendKeys("KoŁalsky");
-//
+// TODO: 27.10.2019 - poprawić działanie wyboru z checkbox w przypadku istnienia np 3ech elemtnów 
 //                WebElement gender = driver.findElement(By.name("gender"));
 //                gender.clear();
 //                gender.sendKeys("Male");
@@ -55,6 +58,15 @@ public class Zadanie_10 {
                 WebElement company = driver.findElement(By.id("company"));
                 company.clear();
                 company.sendKeys("Coders Lab");
+
+//                Select roleDropdown = new Select(driver.findElement(By.id(ProfilerLogEntry)))
+
+                WebElement manRadioButton = driver.findElement(By.name("gender"));
+                if (manRadioButton.isDisplayed()){
+                        manRadioButton.click();
+                }else {
+                        Assert.fail("Pole plec jest niewidoczne");
+                }
 
                 WebElement comment = driver.findElement(By.id("comment"));
                 comment.clear();
